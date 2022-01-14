@@ -20,7 +20,7 @@ function Header(props) {
           {currentUser && (
             <ul>
               <li>
-                <span onClick={() => auth.signOut()}>
+                <span className='logout' onClick={() => auth.signOut()}>
                   LOGOUT
                 </span>
               </li>

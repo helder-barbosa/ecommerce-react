@@ -62,9 +62,11 @@ class App extends Component {
           </Route>
 
           <Route path="/registration" >
-            <MainLayout currentUser={currentUser}>
-              <Registration />
-            </MainLayout>
+            {currentUser ? <Redirect to='/' /> :
+              <MainLayout currentUser={currentUser}>
+                <Registration />
+              </MainLayout>
+            }
           </Route>
 
           <Route path="/login" >
@@ -73,7 +75,6 @@ class App extends Component {
                 <Login />
               </MainLayout>
             }
-
           </Route>
 
         </Switch>
