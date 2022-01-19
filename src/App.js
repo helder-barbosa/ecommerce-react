@@ -10,6 +10,7 @@ import HomePageLayout from './layouts/HomePageLayout';
 import HomePage from './pages/HomePage/HomePage';
 import Registration from './pages/Registration/Registration';
 import Login from './pages/Login/Login';
+import Recovery from './pages/Recovery/Recovery';
 
 const initialState = {
   currentUser: null
@@ -75,6 +76,14 @@ class App extends Component {
                 <Login />
               </MainLayout>
             }
+          </Route>
+
+          <Route path="/recovery" >
+
+            <MainLayout currentUser={currentUser}>
+              <Recovery />
+            </MainLayout>
+
           </Route>
 
         </Switch>

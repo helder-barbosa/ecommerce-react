@@ -4,6 +4,7 @@ import FormInput from "../Forms/FormInput/FormInput";
 import Button from './../Forms/Button/Button'
 import './SignUp.scss'
 import { auth, handleUserProfile } from "../../firebase/utils";
+import AuthWrapper from './../AuthWrapper/AuthWrapper'
 
 const initialState = {
   displayName: '',
@@ -62,10 +63,13 @@ class SignUp extends Component {
 
     const { displayName, email, password, confirmPassword, errors } = this.state
 
+    const configAuthWrapper = {
+      headline: "Registration"
+    }
+
     return (
-      <div className="signup">
-        <div className="wrap">
-          <h2>SignUp</h2>
+      <AuthWrapper {...configAuthWrapper}>
+        <div className="formWrap">
 
           {errors.length > 0 && (
             <ul>
@@ -116,7 +120,7 @@ class SignUp extends Component {
             </form>
           </div>
         </div>
-      </div>
+      </AuthWrapper>
     )
   }
 }
