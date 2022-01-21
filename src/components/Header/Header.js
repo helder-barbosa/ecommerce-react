@@ -21,6 +21,11 @@ function Header(props) {
           {currentUser && (
             <ul>
               <li>
+                <Link to="/dashboard">
+                  My Account
+                </Link>
+              </li>
+              <li>
                 <span className='logout' onClick={() => auth.signOut()}>
                   LOGOUT
                 </span>
@@ -30,6 +35,7 @@ function Header(props) {
 
           {!currentUser && (
             <ul>
+
               <li>
                 <Link to="/registration">
                   Register
